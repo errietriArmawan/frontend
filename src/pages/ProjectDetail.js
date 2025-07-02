@@ -31,13 +31,17 @@ function ProjectDetail() {
       <p><strong>Tanggal Dibuat:</strong> {new Date(project.createdAt).toLocaleDateString()}</p>
 
       {project.coverImage && (
-        <img
-          src={project.coverImage.startsWith('http') ? project.coverImage : `http://localhost:5000${project.coverImage}`}
-          alt={project.title}
-          className="img-fluid rounded shadow-sm mb-4"
-          style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
-        />
-      )}
+      <img
+          src={
+                project.coverImage.startsWith('http')
+                  ? project.coverImage
+                  : `https://myserver-production-5f38.up.railway.app${project.coverImage}`
+              }
+              alt={project.title}
+              className="img-fluid rounded shadow-sm mb-4"
+              style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
+            />
+          )}
 
       <p className="lead">{project.description}</p>
 
