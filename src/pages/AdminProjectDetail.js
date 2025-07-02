@@ -57,7 +57,7 @@ function AdminProjectDetail() {
         {project.coverImage && (
         <div className="mb-4 text-center">
             <img
-            src={`${process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'}${project.coverImage}`}
+            src={`${process.env.REACT_APP_BACKEND_URL}${project.coverImage}`}
             alt={project.title}
             className="img-fluid rounded shadow-sm"
             style={{ maxHeight: '400px', maxWidth: '100%', objectFit: 'contain' }}
