@@ -56,13 +56,18 @@ function AdminProjectDetail() {
         {/* Gambar cover */}
         {project.coverImage && (
         <div className="mb-4 text-center">
-            <img
-            src={`${process.env.REACT_APP_BACKEND_URL}${project.coverImage}`}
+          <img
+            src={
+              project.coverImage.startsWith('http')
+                ? project.coverImage.replace('http://', 'https://') // pastiin HTTPS
+                : `${process.env.REACT_APP_BACKEND_URL}${project.coverImage}`
+            }
             alt={project.title}
             className="img-fluid rounded shadow-sm"
             style={{ maxHeight: '400px', maxWidth: '100%', objectFit: 'contain' }}
-            />
+          />
         </div>
+
         )}
 
         {/* Judul & Deskripsi */}
