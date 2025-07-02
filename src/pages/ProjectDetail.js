@@ -33,10 +33,10 @@ function ProjectDetail() {
       {project.coverImage && (
       <img
           src={
-                project.coverImage.startsWith('http')
-                  ? project.coverImage
-                  : `https://myserver-production-5f38.up.railway.app${project.coverImage}`
-              }
+              project.coverImage.startsWith('http')
+                ? project.coverImage.replace('http://', 'https://') // pastiin pakai HTTPS
+                : `https://myserver-production-5f38.up.railway.app${project.coverImage}`
+            }
               alt={project.title}
               className="img-fluid rounded shadow-sm mb-4"
               style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
