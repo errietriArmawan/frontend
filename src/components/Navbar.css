@@ -1,0 +1,26 @@
+/* Animasi toggle menu */
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Jarak antara menu kiri dan kanan */
+.navbar-nav {
+  margin-right: auto; /* Paksa menu kanan ke pojok */
+}
+
+/* Tombol login lebih menonjol */
+.btn-outline-light {
+  border-width: 2px;
+  font-weight: 500;
+}
+
+/* Responsif: Adjust padding di mobile */
+@media (max-width: 992px) {
+  .navbar-nav {
+    margin-top: 10px;
+  }
+  .d-flex {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
