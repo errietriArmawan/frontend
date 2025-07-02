@@ -35,12 +35,16 @@ function Projects() {
               style={{ cursor: 'pointer' }}
               onClick={() => navigate(`/projects/${project.slug}`)}
             >
-              <img
-                src={`${process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'}${project.coverImage}`}
-                className="card-img-top"
-                alt={project.title}
-                style={{ height: '200px', objectFit: 'cover' }}
-              />
+             <img
+                  src={
+                    project.coverImage.startsWith('http')
+                      ? project.coverImage.replace('http://', 'https://') // force HTTPS
+                      : `${(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000')}${project.coverImage}`
+                  }
+                  className="card-img-top"
+                  alt={project.title}
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
               <div className="card-body">
                 <h5 className="card-title">{project.title}</h5>
                 <p className="card-text">
